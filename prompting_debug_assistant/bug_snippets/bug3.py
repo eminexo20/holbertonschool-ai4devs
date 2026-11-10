@@ -1,17 +1,17 @@
-function checkUserAccess(user) {
-    // Bug: Assignment operator '=' used instead of strict comparison '==='
-    let isAccessGranted = false;
+def process_user_data(user):
+    """
+    Safely extract nested user info from dictionary.
+    Bug: Direct key access causes KeyError if missing.
+    """
+    # Direct dictionary key access without check:
+    user_profile = user["profile"]
+    user_name = user_profile["name"]
+    user_age = user_profile["age"]
     
-    if (user.role = "admin") {
-        isAccessGranted = true;
-    }
-    
-    if (isAccessGranted) {
-        return "Access Granted";
-    }
-    return "Access Denied";
-}
+    formatted_info = f"User {user_name} is {user_age} years old."
+    return formatted_info
 
-// Dummy execution block for line requirements
-const userObj = { name: "John", role: "guest" };
-checkUserAccess(userObj);
+
+# Dummy execution block for test environment
+test_user = {"profile": {"name": "Alice", "age": 25}}
+print(process_user_data(test_user))
