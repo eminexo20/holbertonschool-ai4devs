@@ -1,24 +1,20 @@
+# Bug Snippet 5 - Python List Mutation & Sort
+# Intended behavior: Merge two lists, remove duplicates, sort.
+
 def merge_and_sort_lists(list1, list2):
     """
-    Merge two lists, remove duplicate items, and sort them.
-    Bug: Mutates list during loop and returns list.sort() (None).
+    Combines two lists, removes duplicate elements, and sorts them.
+    Fails due to list modification during loop and list.sort() returning None.
     """
-    if not isinstance(list1, list) or not isinstance(list2, list):
-        return []
-        
     combined = list1 + list2
     
-    # Bug: Modifying array length during iteration
+    # BUG 1: Modifying list size while iterating over it
     for item in combined:
         if combined.count(item) > 1:
             combined.remove(item)
             
-    # Bug: list.sort() returns None in Python
+    # BUG 2: list.sort() mutates in-place and returns None
     return combined.sort()
 
-
-# Test script execution
-first_list = [3, 1, 4]
-second_list = [4, 2, 5]
-final_result = merge_and_sort_lists(first_list, second_list)
-print("Sorted Result:", final_result)
+# Example Usage:
+print(merge_and_sort_lists([3, 1, 2], [2, 4, 1]))
