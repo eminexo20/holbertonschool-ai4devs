@@ -18,3 +18,4 @@ def merge_and_sort_lists(list1, list2):
 
 # Example Usage:
 print(merge_and_sort_lists([3, 1, 2], [2, 4, 1]))
+
