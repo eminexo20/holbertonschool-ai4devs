@@ -3,10 +3,13 @@
 ## Example 1 – Refactoring Prompt
 
 **Prompt**:  
-You are a Senior Software Engineer. Refactor the provided Python code to improve readability, maintainability, and performance without changing its external behavior.
+Role: Senior Software Engineer  
+Task: Refactor the provided Python code to improve readability, maintainability, and performance without changing its external behavior.  
+Input Placeholder: [CODE_BLOCK]  
+Expected Output: Refactored clean code with explanations.  
 
 Language: Python  
-Code:
+Input:
 ```python
 def process_users(users):
     res = []
