@@ -2,6 +2,10 @@ function checkUserAccess(user) {
     // Bug: Assignment operator '=' used instead of strict comparison '==='
     let isAccessGranted = false;
     
+    if (!user) {
+        return "No user provided";
+    }
+    
     if (user.role = "admin") {
         isAccessGranted = true;
     }
@@ -12,6 +16,7 @@ function checkUserAccess(user) {
     return "Access Denied";
 }
 
-// Dummy execution block for line requirements
-const userObj = { name: "John", role: "guest" };
-checkUserAccess(userObj);
+// Execution block for test
+const sampleUser = { name: "John", role: "guest" };
+const accessStatus = checkUserAccess(sampleUser);
+console.log("Status:", accessStatus);
