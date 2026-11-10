@@ -3,7 +3,9 @@ def get_last_n_items(items, n):
     Return the last n items of a list.
     Bug: Incorrect index slicing range logic.
     """
-    if not items or n <= 0:
+    if not items:
+        return []
+    if n <= 0:
         return []
     
     # Bug: Off-by-one indexing error in slice offset
@@ -11,9 +13,12 @@ def get_last_n_items(items, n):
     if start_index < 0:
         start_index = 0
         
-    return items[start_index:]
+    result_list = items[start_index:]
+    return result_list
 
 
-# Test block to maintain line count range (10-40 lines)
-sample_list = [1, 2, 3, 4, 5]
-result = get_last_n_items(sample_list, 2)
+# Test code execution block
+my_sample_list = [10, 20, 30, 40, 50]
+n_value = 2
+final_output = get_last_n_items(my_sample_list, n_value)
+print("Result is:", final_output)
