@@ -16,3 +16,4 @@ function calculateAverage(numbers) {
 // Example Usage:
 const data = [10, 20, 30, 40];
 console.log(calculateAverage(data));
+
