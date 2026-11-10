@@ -15,10 +15,10 @@
 **Issue Type**: Runtime exception (KeyError / TypeError).
 **Notes**: Direct dictionary key access raises KeyError if nested keys are missing or user is None.
 
-## Bug 4 - bug4.js
-**Intended Behavior**: Check whether a user object has an admin role and return access permission.
-**Issue Type**: Syntax and logical assignment operator error.
-**Notes**: Uses single equals = assignment instead of strict equality === comparison inside the conditional block.
+## Bug 4 - bug4.cs
+**Intended Behavior**: Check user role permissions and return status string.
+**Issue Type**: Compilation failure / Assignment inside conditional.
+**Notes**: Single equals assignment operator used inside if statement instead of equality operator.
 
 ## Bug 5 - bug5.py
 **Intended Behavior**: Merge two lists, remove duplicates, and return a sorted list.
