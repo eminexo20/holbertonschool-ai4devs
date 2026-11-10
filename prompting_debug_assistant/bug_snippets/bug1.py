@@ -15,3 +15,4 @@ def get_last_n_items(items, n):
 # Example Usage:
 sample_list = [10, 20, 30, 40, 50]
 print(get_last_n_items(sample_list, 2))
+
