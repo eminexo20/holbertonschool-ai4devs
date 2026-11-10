@@ -2,14 +2,20 @@ function calculateAverage(numbers) {
     // Bug: total is undefined (should be initialized to 0)
     let total;
     
+    if (!numbers || numbers.length === 0) {
+        return 0;
+    }
+    
     // Bug: i <= numbers.length causes array out-of-bounds
     for (let i = 0; i <= numbers.length; i++) {
         total += numbers[i];
     }
     
-    return total / numbers.length;
+    const average = total / numbers.length;
+    return average;
 }
 
-// Test snippet for line count requirement
-const inputData = [10, 20, 30, 40];
-const avgResult = calculateAverage(inputData);
+// Test block for execution
+const testNumbers = [10, 20, 30, 40];
+const calculatedAvg = calculateAverage(testNumbers);
+console.log("Calculated Average:", calculatedAvg);
