@@ -1,16 +1,17 @@
-// Bug Snippet 4 - JavaScript Equality Operator Misuse
-// Intended behavior: Check user role permissions.
-// -------------------------------------------------------------
-
 function checkUserAccess(user) {
-    // Assignment operator '=' used instead of strict comparison '==='
+    // Bug: Assignment operator '=' used instead of strict comparison '==='
+    let isAccessGranted = false;
+    
     if (user.role = "admin") {
-        return "Access Granted";
+        isAccessGranted = true;
     }
     
+    if (isAccessGranted) {
+        return "Access Granted";
+    }
     return "Access Denied";
 }
 
-// Example Usage:
-// const guestUser = { name: "John", role: "guest" };
-// console.log(checkUserAccess(guestUser));
+// Dummy execution block for line requirements
+const userObj = { name: "John", role: "guest" };
+checkUserAccess(userObj);
