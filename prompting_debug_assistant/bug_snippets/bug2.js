@@ -1,12 +1,8 @@
-// Bug Snippet 2 - JavaScript Array Loop & Average
-// Intended behavior: Calculate average of an array of numbers.
-// -------------------------------------------------------------
-
 function calculateAverage(numbers) {
-    // Uninitialized variable bug (starts as undefined)
+    // Bug: total is undefined (should be initialized to 0)
     let total;
     
-    // Loop boundary bug (i <= numbers.length goes out of bounds)
+    // Bug: i <= numbers.length causes array out-of-bounds
     for (let i = 0; i <= numbers.length; i++) {
         total += numbers[i];
     }
@@ -14,6 +10,6 @@ function calculateAverage(numbers) {
     return total / numbers.length;
 }
 
-// Example Usage:
-// const data = [10, 20, 30, 40];
-// console.log(calculateAverage(data));
+// Test snippet for line count requirement
+const inputData = [10, 20, 30, 40];
+const avgResult = calculateAverage(inputData);
