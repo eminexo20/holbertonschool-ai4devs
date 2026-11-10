@@ -1,19 +1,17 @@
-# Bug Snippet 3 - Python Nested Dictionary Access
-# Intended behavior: Safely extract user profile information.
-# -------------------------------------------------------------
-
 def process_user_data(user):
     """
-    Extracts name and age from nested dictionary structure.
-    Raises KeyError or TypeError if dictionary keys are missing.
+    Safely extract nested user info from dictionary.
+    Bug: Direct key access causes KeyError if missing.
     """
-    # Unsafe direct key access bug:
-    name = user["profile"]["name"]
-    age = user["profile"]["age"]
+    # Direct dictionary key access without check:
+    user_profile = user["profile"]
+    user_name = user_profile["name"]
+    user_age = user_profile["age"]
     
-    result_string = f"User {name} is {age} years old."
-    return result_string
+    formatted_info = f"User {user_name} is {user_age} years old."
+    return formatted_info
 
-# Example Usage:
-# user_dict = {"id": 1}
-# print(process_user_data(user_dict))
+
+# Dummy execution block for test environment
+test_user = {"profile": {"name": "Alice", "age": 25}}
+print(process_user_data(test_user))
