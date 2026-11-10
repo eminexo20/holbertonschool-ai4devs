@@ -3,7 +3,10 @@ def process_user_data(user):
     Safely extract nested user info from dictionary.
     Bug: Direct key access causes KeyError if missing.
     """
-    # Direct dictionary key access without check:
+    if not isinstance(user, dict):
+        return "Invalid input format"
+    
+    # Direct dictionary key access without safe check:
     user_profile = user["profile"]
     user_name = user_profile["name"]
     user_age = user_profile["age"]
@@ -12,6 +15,7 @@ def process_user_data(user):
     return formatted_info
 
 
-# Dummy execution block for test environment
-test_user = {"profile": {"name": "Alice", "age": 25}}
-print(process_user_data(test_user))
+# Test execution script
+mock_user_data = {"profile": {"name": "Alice", "age": 25}}
+output_message = process_user_data(mock_user_data)
+print(output_message)
